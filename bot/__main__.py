@@ -56,21 +56,21 @@ if __name__ == "__main__" :
     # START command
     incoming_start_message_handler = MessageHandler(
         incoming_start_message_f,
-        filters=filters.command(["start", f"start@{BOT_USERNAME}"])
+        filters=filters.command(["start", "start@{BOT_USERNAME}"])
     )
     app.add_handler(incoming_start_message_handler)
     
     # COMPRESS command
     incoming_compress_message_handler = MessageHandler(
         incoming_compress_message_f,
-        filters=filters.command(["compress", f"compress@{BOT_USERNAME}"])
+        filters=filters.command(["compress", "compress@{BOT_USERNAME}"])
     )
     app.add_handler(incoming_compress_message_handler)
     
     # CANCEL command
     incoming_cancel_message_handler = MessageHandler(
         incoming_cancel_message_f,
-        filters=filters.command(["cancel", f"cancel@{BOT_USERNAME}"]) & filters.chat(chats=AUTH_USERS)
+        filters=filters.command(["cancel", "cancel@{BOT_USERNAME}"]) & filters.chat(chats=AUTH_USERS)
     )
     app.add_handler(incoming_cancel_message_handler)
 
@@ -84,7 +84,7 @@ if __name__ == "__main__" :
     # HELP command
     help_text_handler = MessageHandler(
         help_message_f,
-        filters=filters.command(["help", f"help@{BOT_USERNAME}"])
+        filters=filters.command(["help", "help@{BOT_USERNAME}"])
     )
     app.add_handler(help_text_handler)
     
